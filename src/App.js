@@ -4,6 +4,8 @@ import { Route, Routes} from 'react-router-dom';
 import Users from './user/pages/User';
 import NewPlace from './places/pages/NewPlace';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
+import UserPlaces from './places/pages/UserPlaces';
+
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
       <MainNavigation />
       <main>
         <Routes>
+          
             <Route path='/' element={<Users />}  />
             <Route path='/places/new' element={<NewPlace />}  />
+            <Route path='/:userId/places' element={<UserPlaces />}/>
             <Route path='*' element={<h2 className='center'>Not found</h2>} />
           
         </Routes>
